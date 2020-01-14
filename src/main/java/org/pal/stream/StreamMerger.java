@@ -69,14 +69,4 @@ public class StreamMerger<T> implements Spliterator<T> {
         return StreamSupport.stream(sm, false);
     }
 
-    public static void main(String... a) {
-        Stream<Integer> s1 = Stream.of(2,5, 7,11);
-        Stream<Integer> s2 = Stream.of(3,5,6,13);
-        Stream<Integer> s3 = Stream.of(4);
-
-        Stream<Integer> sm = merge(
-                Comparator.naturalOrder(),
-                s1, s2, s3);
-        sm.forEach(System.out::println);
-    }
 }
